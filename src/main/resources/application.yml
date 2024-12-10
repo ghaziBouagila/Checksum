@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:/app/data/todolist
+    username: root
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # Automatically update the database schema
+  h2:
+    console.enabled: true # Access the H2 console at http://localhost:8080/h2-console
+  sql:
+    init:
+      mode: never # Disable automatic execution of SQL scripts

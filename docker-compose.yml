@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    build: ./
+    ports:
+      - "8080:8080"
+    volumes:
+      - todolist-data:/app/data
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:file:/app/data/todolist
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - h2
+
+  h2:
+    image: oscarfonts/h2
+    ports:
+      - "9092:9092"
+    volumes:
+      - ./data:/opt/h2-data
+volumes:
+  todolist-data:
