@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - todolist-data:/app/data
+      - ./data:/app/data/todolist
     environment:
       SPRING_DATASOURCE_URL: jdbc:h2:file:/app/data/todolist
       SPRING_DATASOURCE_USERNAME: root
@@ -22,6 +22,3 @@ services:
       - ./data:/opt/h2-data
     environment:
       H2_OPTIONS: -webAllowOthers
-
-volumes:
-  todolist-data:
