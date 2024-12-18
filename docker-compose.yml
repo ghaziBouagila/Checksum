@@ -14,6 +14,8 @@ services:
     depends_on:
       - h2
 
+  # TODO: are you sure you need this one ?
+  # If so why giving a volume above but not here ?!?
   h2:
     image: oscarfonts/h2
     ports:
