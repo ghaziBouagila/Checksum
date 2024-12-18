@@ -7,21 +7,25 @@ Pour tester l'exécution du projet, suivez ces étapes :
    
 
 2. **Construire les images Docker** :
-   
+```
    docker-compose build
-  
+```
 
 3. **Démarrer les services** :
-   
+```
    docker-compose up
-  
+```
 
 4. **Accéder à l'application** :
    Ouvrez votre navigateur web et allez à `http://localhost:8080` pour accéder à votre application Spring Boot.
-   **Obtenir la liste des checksums :  **
-        curl -X GET http://localhost:8080/checksums
+   **Obtenir la liste des checksums :**
+```
+        curl -X GET http://localhost:8080/checksum
+```
     **Ajouter un nouveau checksum :**  
+```
       curl -X POST "http://localhost:8080/checksum" -d "input=yourInputString" -d "algorithm=SHA-256"
+```
 
 6. **Accéder à la console H2** :
    Ouvrez votre navigateur web et allez à `http://localhost:8080/h2-console` pour accéder à la console de la base de données H2. Utilisez les identifiants suivants :
